@@ -1,0 +1,57 @@
+{
+  "title": "What are the ideal conditions inside an office?",
+  "questions": [
+    {
+      "id": 1,
+      "options": [
+        {
+          "text": "good pay",
+          "isCorrect": true
+        },
+        {
+          "text": "bad pay",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "options": [
+        {
+          "text": "Lots of meetings",
+          "isCorrect": false
+        },
+        {
+          "text": "Less meetings",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "options": [
+        {
+          "text": "Free Coffee!",
+          "isCorrect": true
+        },
+        {
+          "text": "Expensive Coffee",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "options": [
+        {
+          "text": "Bear in the office",
+          "isCorrect": false
+        },
+        {
+          "text": "Dog in the office",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}
