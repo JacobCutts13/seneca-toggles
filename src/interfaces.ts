@@ -19,11 +19,11 @@ export interface Question extends QuestionJson {
   selectorIndex: number;
 }
 
-export interface Questions extends Omit<QuestionsJson, "questions"> {
+export interface Tile extends Omit<QuestionsJson, "questions"> {
   questions: Question[];
   nIncorrect: number;
 }
 
 export type Action =
-  | { type: "setQuestionsTile"; questions: Questions }
+  | { type: "setTile"; tile: Tile }
   | { type: "setSelector"; questionId: number; tileId: number };

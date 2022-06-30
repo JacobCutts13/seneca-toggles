@@ -18,11 +18,11 @@ export default function setQuestions(
       return { ...question, options: shuffledOptions, selectorIndex };
     }
   );
-  const questions = {
+  const tile = {
     ...questionsJson,
     questions: shuffledQuestions,
     nIncorrect: nIncorrect,
   };
-  dispatch({ type: "setQuestionsTile", questions });
+  dispatch({ type: "setTile", tile });
   return;
 }

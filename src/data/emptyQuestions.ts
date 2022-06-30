@@ -1,6 +1,6 @@
-import { Questions } from "../interfaces";
+import { Tile } from "../interfaces";
 
-export const EmptyQuestion: Questions = {
+export const EmptyQuestion: Tile = {
   id: 0,
   title: "",
   nIncorrect: 0,
