@@ -2,19 +2,21 @@ import { useEffect, useReducer } from "react";
 import "./App.css";
 import TogglesTile from "./components/TogglesTile";
 import officeConditions from "./data/officeConditions.json";
-import { Action, Questions } from "./interfaces";
+import myQuestions from "./data/myQuestions.json";
+import { Action, Tile } from "./interfaces";
 import setQuestions from "./utils/setQuestions";
 
 function App() {
-  const reducer = (state: Questions[], action: Action) => {
+  const reducer = (state: Tile[], action: Action) => {
     switch (action.type) {
-      case "setQuestionsTile":
+      case "setTile":
         //dont add question tile if its already there!
-        if (state.some((questions) => questions.id === action.questions.id))
-          return state;
-        return [...state, action.questions];
+        if (state.some((tile) => tile.id === action.tile.id)) return state;
+        return [...state, action.tile];
+
       case "setSelector": {
-        const tileQuestions = state[action.tileId];
+        const tileQuestions = state.find((tile) => tile.id === action.tileId);
+        if (!tileQuestions) return state;
         if (tileQuestions.nIncorrect === 0) return state;
         let nIncorrect = tileQuestions.nIncorrect;
         const newQuestions = tileQuestions.questions.map((question) => {
@@ -32,8 +34,8 @@ function App() {
           nIncorrect: nIncorrect,
           questions: newQuestions,
         };
-        const newState = state.map((questions, i) =>
-          i === action.tileId ? newTileQuestions : questions
+        const newState = state.map((questions) =>
+          questions.id === action.tileId ? newTileQuestions : questions
         );
         return newState;
       }
@@ -46,14 +48,15 @@ function App() {
 
   useEffect(() => {
     setQuestions(dispatch, officeConditions);
+    setQuestions(dispatch, myQuestions);
   }, []);
 
   return (
     <div className="App">
       {state.length > 0 &&
-        state.map((question, i) => (
-          <div key={i}>
-            <TogglesTile questions={question} dispatch={dispatch} />
+        state.map((tile) => (
+          <div key={tile.id} className="tile-container">
+            <TogglesTile tile={tile} dispatch={dispatch} />
           </div>
         ))}
     </div>

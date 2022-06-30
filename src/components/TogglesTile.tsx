@@ -1,28 +1,31 @@
 import { Dispatch } from "react";
-import { Action, Questions } from "../interfaces";
+import { Action, Tile } from "../interfaces";
 import numberToWord from "../utils/numberToWord";
 import ToggleQuestion from "./ToggleQuestion";
 
 interface Props {
-  questions: Questions;
+  tile: Tile;
   dispatch: Dispatch<Action>;
 }
 
 export default function TogglesTile(props: Props): JSX.Element {
   const markText =
-    props.questions.nIncorrect === 0
+    props.tile.nIncorrect === 0
       ? "This answer is Correct!"
       : "The answer is incorrect";
   return (
-    <div id="toggles" className={numberToWord(props.questions.nIncorrect)}>
-      <h1 className="questions-title">{props.questions.title}</h1>
+    <div
+      id={`toggle-${props.tile.id.toString()}`}
+      className={`tile ${numberToWord(props.tile.nIncorrect)}`}
+    >
+      <h1 className="questions-title">{props.tile.title}</h1>
       <div className="questions-container">
-        {props.questions.questions.map((question, i) => (
+        {props.tile.questions.map((question, i) => (
           <div className="single-question-container" key={i}>
             <ToggleQuestion
               question={question}
               dispatch={props.dispatch}
-              tileId={props.questions.id}
+              tileId={props.tile.id}
             />
           </div>
         ))}

@@ -1,5 +1,6 @@
 import { Dispatch } from "react";
 import { Action, Question } from "../interfaces";
+import sliderIndexToClass from "../utils/sliderIndexToClass";
 
 interface Props {
   question: Question;
@@ -31,9 +32,10 @@ export default function ToggleQuestion(props: Props): JSX.Element {
           </div>
         ))}
         <div
-          className={`answer-slider ${
-            props.question.selectorIndex === 0 ? "" : "right"
-          }`}
+          className={`answer-slider ${sliderIndexToClass(
+            props.question.selectorIndex,
+            props.question.options.length
+          )}`}
         ></div>
       </button>
     </>
