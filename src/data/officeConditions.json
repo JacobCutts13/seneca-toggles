@@ -1,16 +1,30 @@
 {
+  "id": 0,
   "title": "What are the ideal conditions inside an office?",
   "questions": [
+    {
+      "id": 0,
+      "options": [
+        {
+          "text": "good pay",
+          "id": 0
+        },
+        {
+          "text": "bad pay",
+          "id": 1
+        }
+      ]
+    },
     {
       "id": 1,
       "options": [
         {
-          "text": "good pay",
-          "isCorrect": true
+          "text": "Less meetings",
+          "id": 0
         },
         {
-          "text": "bad pay",
-          "isCorrect": false
+          "text": "Lots of meetings",
+          "id": 1
         }
       ]
     },
@@ -18,12 +32,12 @@
       "id": 2,
       "options": [
         {
-          "text": "Lots of meetings",
-          "isCorrect": false
+          "text": "Free Coffee!",
+          "id": 0
         },
         {
-          "text": "Less meetings",
-          "isCorrect": true
+          "text": "Expensive Coffee",
+          "id": 1
         }
       ]
     },
@@ -31,25 +45,12 @@
       "id": 3,
       "options": [
         {
-          "text": "Free Coffee!",
-          "isCorrect": true
+          "text": "Dog in the office",
+          "id": 0
         },
-        {
-          "text": "Expensive Coffee",
-          "isCorrect": false
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "options": [
         {
           "text": "Bear in the office",
-          "isCorrect": false
-        },
-        {
-          "text": "Dog in the office",
-          "isCorrect": true
+          "id": 1
         }
       ]
     }
