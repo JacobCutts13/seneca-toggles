@@ -23,6 +23,6 @@ export default function setQuestions(
     questions: shuffledQuestions,
     nIncorrect: nIncorrect,
   };
-  dispatch({ type: "setQuestions", questions });
+  dispatch({ type: "setQuestionsTile", questions });
   return;
 }

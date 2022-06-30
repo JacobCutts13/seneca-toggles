@@ -19,7 +19,11 @@ export default function TogglesTile(props: Props): JSX.Element {
       <div className="questions-container">
         {props.questions.questions.map((question, i) => (
           <div className="single-question-container" key={i}>
-            <ToggleQuestion question={question} dispatch={props.dispatch} />
+            <ToggleQuestion
+              question={question}
+              dispatch={props.dispatch}
+              tileId={props.questions.id}
+            />
           </div>
         ))}
       </div>

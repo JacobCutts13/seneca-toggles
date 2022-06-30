@@ -1,9 +1,9 @@
 {
-  "id": 1,
+  "id": 0,
   "title": "What are the ideal conditions inside an office?",
   "questions": [
     {
-      "id": 1,
+      "id": 0,
       "options": [
         {
           "text": "good pay",
@@ -16,7 +16,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": 1,
       "options": [
         {
           "text": "Less meetings",
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": 2,
       "options": [
         {
           "text": "Free Coffee!",
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": 3,
       "options": [
         {
           "text": "Dog in the office",

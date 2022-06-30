@@ -25,5 +25,5 @@ export interface Questions extends Omit<QuestionsJson, "questions"> {
 }
 
 export type Action =
-  | { type: "setOption"; questionId: number; optionId: number }
-  | { type: "setQuestions"; questions: Questions };
+  | { type: "setQuestionsTile"; questions: Questions }
+  | { type: "setSelector"; questionId: number; tileId: number };
