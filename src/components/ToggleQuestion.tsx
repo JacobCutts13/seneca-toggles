@@ -1,15 +1,31 @@
-export default function ToggleQuestion(): JSX.Element {
+import { Dispatch } from "react";
+import { Action, Question } from "../interfaces";
+
+interface Props {
+  question: Question;
+  dispatch: Dispatch<Action>;
+}
+
+export default function ToggleQuestion(props: Props): JSX.Element {
   return (
-    <div className="single-question-container">
+    <>
       <button className="question-button">
-        <div className="answer active">
-          <p>ans 1</p>
-        </div>
-        <div className="answer inactive">
-          <p>ans 2</p>
-        </div>
-        <div className={`answer-slider`}></div>
+        {props.question.options.map((option, i) => (
+          <div
+            className={`answer ${
+              i === props.question.selectorIndex ? "active" : "inactive"
+            }`}
+            key={i}
+          >
+            <p>{option.text}</p>
+          </div>
+        ))}
+        <div
+          className={`answer-slider ${
+            props.question.selectorIndex === 0 ? "" : "right"
+          }`}
+        ></div>
       </button>
-    </div>
+    </>
   );
 }
