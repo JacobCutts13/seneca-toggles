@@ -1,8 +1,11 @@
 import { useEffect, useReducer } from "react";
 import "./App.css";
 import TogglesTile from "./components/TogglesTile";
+import Navbar from "./components/Navbar";
 import officeConditions from "./data/officeConditions.json";
 import myQuestions from "./data/myQuestions.json";
+import higherOrLower from "./data/higherOrLower.json";
+import biologyQuestions from "./data/biologyQuestions.json";
 import { Action, Tile } from "./interfaces";
 import setQuestions from "./utils/setQuestions";
 
@@ -49,6 +52,8 @@ function App() {
   useEffect(() => {
     setQuestions(dispatch, officeConditions);
     setQuestions(dispatch, myQuestions);
+    setQuestions(dispatch, higherOrLower);
+    setQuestions(dispatch, biologyQuestions);
   }, []);
 
   return (
@@ -59,6 +64,7 @@ function App() {
             <TogglesTile tile={tile} dispatch={dispatch} />
           </div>
         ))}
+      <Navbar />
     </div>
   );
 }
