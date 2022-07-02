@@ -1,10 +1,14 @@
-import { OptionJson } from "../interfaces";
+import { OptionJson, Question } from "../interfaces";
 
 //Fisher–Yates shuffle
-export default function shuffleOptions(options: OptionJson[]): OptionJson[] {
-  const shuffledOptions = options
-    .map((option) => ({ option, sortVal: Math.random() }))
+function shuffleOptions(array: Question[]): Question[];
+function shuffleOptions(array: OptionJson[]): OptionJson[];
+function shuffleOptions(array: OptionJson[] | Question[]) {
+  const shuffledArray = array
+    .map((element) => ({ element, sortVal: Math.random() }))
     .sort((a, b) => a.sortVal - b.sortVal)
-    .map((option) => option.option);
-  return shuffledOptions;
+    .map((element) => element.element);
+  return shuffledArray;
 }
+
+export default shuffleOptions;
