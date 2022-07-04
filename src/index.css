@@ -22,6 +22,10 @@ body {
     font-size: 18px;
     line-height: 28.8px;
   }
+
+  a {
+    width: 50px;
+  }
 }
 
 @media screen and (min-width: 601px) {
@@ -36,6 +40,10 @@ body {
   p {
     font-size: 24px;
   }
+
+  a {
+    width: 100px;
+  }
 }
 
 .App {
@@ -48,9 +56,24 @@ body {
 
 .navbar {
   overflow: hidden;
-  background-color: #333;
   position: fixed;
   top: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 10%;
+}
+
+.navbar a {
+  background: linear-gradient(rgb(250, 145, 97), rgb(247, 59, 28));
+  border-radius: 10px;
+  margin: 10px 10px;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
+  text-decoration: none;
+  color: #fff;
 }
 
 .tile-container {
@@ -74,15 +97,18 @@ body {
   max-width: 1024px;
 }
 
-.tile.zero {
+.tile.zero,
+.navbar a.zero {
   background: linear-gradient(180deg, #76e0c2 0%, #59cada 100%);
 }
 
-.tile.one {
+.tile.one,
+.navbar a.one {
   background: linear-gradient(180deg, #f1b496 0%, #ea806a 100%);
 }
 
-.tile.two {
+.tile.two,
+.navbar a.two {
   background: linear-gradient(180deg, #f6b868 0%, #ee6b2d 100%);
 }
 
