@@ -1,5 +1,4 @@
 import { useEffect, useReducer } from "react";
-import "./App.css";
 import TogglesTile from "./components/TogglesTile";
 import Navbar from "./components/Navbar";
 import officeConditions from "./data/officeConditions.json";
@@ -50,6 +49,8 @@ function App() {
   const [state, dispatch] = useReducer(reducer, []);
 
   useEffect(() => {
+    //make get request to api here for question sets
+    //call setQuestions for each set
     setQuestions(dispatch, officeConditions);
     setQuestions(dispatch, myQuestions);
     setQuestions(dispatch, higherOrLower);
