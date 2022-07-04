@@ -45,11 +45,11 @@
       "id": 3,
       "options": [
         {
-          "text": "yes",
+          "text": "Long answer to show vertical button",
           "id": 0
         },
         {
-          "text": "no",
+          "text": "Pick the other one :)",
           "id": 1
         }
       ]

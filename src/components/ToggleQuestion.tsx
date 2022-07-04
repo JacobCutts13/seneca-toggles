@@ -12,6 +12,7 @@ interface Props {
 
 export default function ToggleQuestion(props: Props): JSX.Element {
   //get classNames
+  //arbitrary >30 charcters then use vertical slider
   const verticalClass = props.question.options.some(
     (option) => option.text.length > 30
   )
