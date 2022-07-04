@@ -64,7 +64,7 @@ function App() {
             <TogglesTile tile={tile} dispatch={dispatch} />
           </div>
         ))}
-      <Navbar />
+      <Navbar state={state} dispatch={dispatch} />
     </div>
   );
 }
