@@ -9,10 +9,12 @@ interface Props {
 }
 
 export default function TogglesTile(props: Props): JSX.Element {
+  //get classNames
   const markText =
     props.tile.nIncorrect === 0
       ? "This answer is Correct!"
       : "The answer is incorrect";
+
   return (
     <div
       id={`toggle-${props.tile.id.toString()}`}
@@ -26,6 +28,7 @@ export default function TogglesTile(props: Props): JSX.Element {
               question={question}
               dispatch={props.dispatch}
               tileId={props.tile.id}
+              nIncorrect={props.tile.nIncorrect}
             />
           </div>
         ))}
