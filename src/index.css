@@ -89,8 +89,8 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
-  /* more than two incorrect defaults to this */
-  background: linear-gradient(rgb(250, 145, 97), rgb(247, 59, 28));
+  /* more than one incorrect defaults to this */
+  background: linear-gradient(180deg, #f6b868 0%, #ee6b2d 100%);
   border-radius: 10px;
   margin-top: 16px;
   width: 100%;
@@ -105,11 +105,6 @@ body {
 .tile.one,
 .navbar a.one {
   background: linear-gradient(180deg, #f1b496 0%, #ea806a 100%);
-}
-
-.tile.two,
-.navbar a.two {
-  background: linear-gradient(180deg, #f6b868 0%, #ee6b2d 100%);
 }
 
 .tile .questions-container {
@@ -137,7 +132,13 @@ body {
   text-align: center;
   position: relative;
   display: flex;
+  flex-direction: row;
   align-items: center;
+}
+
+.tile .question-button.vertical {
+  display: flex;
+  flex-direction: column;
 }
 
 .tile .answer-slider {
@@ -158,12 +159,26 @@ body {
   bottom: 0;
 }
 
+.tile .answer-slider.vertical {
+  width: 100%;
+  height: 50%;
+}
+
 .tile .answer-slider.three {
   width: 33%;
 }
 
+.tile .answer-slider.vertical.three {
+  height: 33%;
+}
+
 .tile .answer-slider.right {
   margin-left: 50%;
+}
+
+.tile .answer-slider.right.vertical {
+  margin-top: 12.5%;
+  margin-left: 0;
 }
 
 .tile .answer-slider.three-middle {
@@ -171,9 +186,33 @@ body {
   width: 33%;
 }
 
+.tile .answer-slider.three-middle.vertical {
+  margin-top: 33%;
+  height: 33%;
+  margin-left: 0;
+}
+
 .tile .answer-slider.three-far-right {
   margin-left: 67%;
   width: 33%;
+}
+
+.tile .answer-slider.three-far-right.vertical {
+  margin-top: 67%;
+  height: 33%;
+  margin-left: 0;
+}
+
+.answer-slider {
+  background-color: #f8caa310;
+}
+
+.answer-slider.zero {
+  background-color: #a5e7e230;
+}
+
+.answer-slider.one {
+  background-color: #f2cbbd30;
 }
 
 .tile .answer {
@@ -184,7 +223,15 @@ body {
 }
 
 .tile .answer.active {
-  color: #9f938b;
+  color: #595b77;
+}
+
+.tile .answer.active.one {
+  color: #e47958;
+}
+
+.tile .answer.active.zero {
+  color: #4cad94;
 }
 
 .tile .answer.inactive {
