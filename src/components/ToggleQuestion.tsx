@@ -2,6 +2,7 @@ import { Dispatch } from "react";
 import { Action, Question } from "../interfaces";
 import numberToWord from "../utils/numberToWord";
 import sliderIndexToClass from "../utils/sliderIndexToClass";
+import useWindowWidth from "../hooks/useWindowWidth";
 
 interface Props {
   question: Question;
@@ -11,10 +12,11 @@ interface Props {
 }
 
 export default function ToggleQuestion(props: Props): JSX.Element {
+  const width = useWindowWidth();
   //get classNames
-  //arbitrary >30 charcters then use vertical slider
+  //arbitrary >width/50 charcters then use vertical slider
   const verticalClass = props.question.options.some(
-    (option) => option.text.length > 30
+    (option) => option.text.length > width / 50
   )
     ? "vertical"
     : "";
