@@ -19,6 +19,7 @@ function App() {
       case "setSelector": {
         const tileQuestions = state.find((tile) => tile.id === action.tileId);
         if (!tileQuestions) return state;
+        //locked tile
         if (tileQuestions.nIncorrect === 0) return state;
         let nIncorrect = tileQuestions.nIncorrect;
         const newQuestions = tileQuestions.questions.map((question) => {
