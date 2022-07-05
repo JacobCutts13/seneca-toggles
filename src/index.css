@@ -84,6 +84,13 @@ body {
   padding: 5px;
   text-decoration: none;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-labels {
+  margin: 0px;
 }
 
 .tile-container {

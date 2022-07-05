@@ -16,7 +16,7 @@ export default function Navbar(props: Props): JSX.Element {
           key={tile.id}
           className={`${numberToWord(tile.nIncorrect)}`}
         >
-          <h1>{i + 1}</h1>
+          <h1 className="nav-labels">{i + 1}</h1>
         </a>
       ))}
     </div>
