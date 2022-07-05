@@ -142,7 +142,7 @@ body {
   cursor: pointer;
   justify-content: stretch;
   min-height: inherit;
-  width: 78%;
+  width: 80%;
   border: 1px solid #fbfbfb;
   background: transparent;
   text-align: center;
@@ -160,11 +160,12 @@ body {
 
 .tile .answer-slider {
   transition-property: all;
-  transition-duration: 0.3s;
+  transition-duration: 0.4s;
   transition-timing-function: ease;
   transition-delay: 0s;
   background: #f8caa380;
-  box-shadow: 0 0 6px 1px rgb(245 69 76 / 50%);
+  /* Add outline to slider */
+  box-shadow: 0 0 5px 1px #ff2e2e50;
   border-radius: 100px;
   width: 50%;
   padding: 0;
